@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Monitoring VM</title>
+</head>
+<body>
+
+
+	<div>
+
+		<h1> Monitoring Virtual Machines </h1>
+		<div>
+			<form>
+				<p>Select the item you want to monitor: </p>
+				<select id = "selected" onchange = "startMonitor(this);">
+					<option value="0"> CPU  </option>
+					<option value="1"> DISK </option>
+					<option value="2"> RAM  </option>
+				</select>
+			</form>
+		</div>	
+
+			<div class="chart_name">
+				<label id ="element"> CPU </label>
+			</div>
+
+			<div id="speedometer">
+			</div>
+
+			<div>
+				<label id = "title">CPU usage (%)</label>
+				<input id="percent" value = ""/> 
+				<button id = "actualize_button" onClick = "actualize();">Actualize</button>
+			</div>
+		
+	</div>
+
+
+<script src="lib/jquery-2.1.1.min.js"></script>
+<script src="lib/monitoring.js"></script>
+<script src="lib/speedometer.js"></script>
+
+<script src="js/speed.js"></script>
+
+
+</body>
+</html>
