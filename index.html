@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
     <title>Monitoring VM</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+
   </head>
+
   <body>
+
     <div>
+
       <h1> Monitoring Virtual Machines </h1>
+
       <div class="selection">
         <form>
           <p>Select the item you want to monitor: </p>
@@ -20,6 +26,7 @@
           </div>
         </form>
       </div>
+
       <div id="oculto" style="display:none;">
         <div id="speedometer"> </div>
         <div> <label id="title">CPU usage (%)</label> <input id="percent" class="focus"
@@ -28,10 +35,14 @@
 
             onclick="actualize();">Actualize</button> </div>
       </div>
+
     </div>
+
     <script src="lib/jquery-2.1.1.min.js"></script>
+    <script src="lib/zepto.min.js"></script>
     <script src="lib/monitoring.js"></script>
     <script src="lib/speedometer.js"></script>
     <script src="js/speed.js"></script>
+
   </body>
 </html>
