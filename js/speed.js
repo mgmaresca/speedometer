@@ -58,10 +58,10 @@ var item_speed = new Speedometer({
 
 function startMonitor(item){
 
+	document.getElementById('oculto').style.display = 'block';
 	var element_id = item.options[item.selectedIndex].value;
 
 	if (element_id == 0){
-		document.getElementById("element").innerHTML = "CPU";
 		document.getElementById("title").innerHTML = "CPU usage (%)";
 
 		item_speed.name = "CPU";
@@ -71,7 +71,7 @@ function startMonitor(item){
 		item_speed.drawWithInputValue(50);
 	
 	}else if (element_id == 1){
-		document.getElementById("element").innerHTML = "DISK";
+
 		document.getElementById("title").innerHTML = "Disk usage (GB)";
 
 
@@ -82,7 +82,7 @@ function startMonitor(item){
 		item_speed.drawWithInputValue(50);
 	
 	}else if (element_id == 2){
-		document.getElementById("element").innerHTML = "RAM";
+
 		document.getElementById("title").innerHTML = "RAM usage (MB)";
 
 
