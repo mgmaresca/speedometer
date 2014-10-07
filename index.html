@@ -18,22 +18,26 @@
         <form>
           <p>Select the item you want to monitor: </p>
           <div class="select-style">
-            <select id="selected" onchange="startMonitor(this);">
-              <option value="0"> CPU </option>
-              <option value="1"> DISK </option>
-              <option value="2"> RAM </option>
+            <select id="selected" >
+              <option value="0" onclick="startCPU();"> CPU </option>
+              <option value="1" onclick="startDISK();"> DISK </option>
+              <option value="2" onclick="startRAM();"> RAM </option>
             </select>
           </div>
         </form>
       </div>
 
       <div id="oculto" style="display:none;">
-        <div id="speedometer"> </div>
-        <div> <label id="title">CPU usage (%)</label> <input id="percent" class="focus"
+        <div id="speedometer"> 
+          <canvas id = "myGraphic"></>
+        </div>
+        
+        <div> 
+          <label id="title">CPU usage (%)</label> 
+          <input id="percent" class="focus" value="" type="text">
+          <button id="actualize_button" class="actualize" onclick="actualizeCPU();">Actualize</button> 
+        </div>
 
-            value="" type="text"> <button id="actualize_button" class="actualize"
-
-            onclick="actualize();">Actualize</button> </div>
       </div>
 
     </div>
