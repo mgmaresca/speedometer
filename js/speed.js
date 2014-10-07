@@ -45,59 +45,94 @@ item_opt.scaleStepWidth = null;
 item_opt.scaleStartValue = null;
 
 
-var item_speed = new Speedometer({
+var cpu_speed = new Speedometer({
 	elementId: 'speedometer',
+	canvasId: 'myGraphic',
 	size: 300,
 	maxVal: 100,
 	name: 'CPU',
 	units: '%'
 });
 
+var disk_speed = new Speedometer({
+	elementId: 'speedometer',
+	canvasId: 'myGraphic',
+	size: 300,
+	maxVal: 100,
+	name: 'DISK',
+	units: 'GB'
+});
+
+var mem_speed = new Speedometer({
+	elementId: 'speedometer',
+	canvasId: 'myGraphic',
+	size: 300,
+	maxVal: 100,
+	name: 'RAM',
+	units: 'MB'
+});
 
 
 
-function startMonitor(item){
+function startCPU(){
 
 	document.getElementById('oculto').style.display = 'block';
-	var element_id = item.options[item.selectedIndex].value;
+		
+	document.getElementById("title").innerHTML = "CPU usage (%)";
+	document.getElementById('actualize_button').onClick = "actualizeCPU();";
 
-	if (element_id == 0){
-		document.getElementById("title").innerHTML = "CPU usage (%)";
-
-		item_speed.name = "CPU";
-		item_speed.units = "%";
-
-		item_speed.draw();
-		item_speed.drawWithInputValue(50);
+	cpu_speed.draw();
+	cpu_speed.drawWithInputValue(50);
 	
-	}else if (element_id == 1){
+};
 
-		document.getElementById("title").innerHTML = "Disk usage (GB)";
+function startDISK(){
 
+	document.getElementById('oculto').style.display = 'block';
 
-		item_speed.name = "DISK";
-		item_speed.units = "GB";
+	document.getElementById("title").innerHTML = "Disk usage (GB)";
+	document.getElementById('actualize_button').onClick = "actualizeDISK();";
 
-		item_speed.draw();
-		item_speed.drawWithInputValue(50);
+	disk_speed.draw();
+	disk_speed.drawWithInputValue(50);
 	
-	}else if (element_id == 2){
+};
 
-		document.getElementById("title").innerHTML = "RAM usage (MB)";
+function startRAM(){
 
+	document.getElementById('oculto').style.display = 'block';
 
-		item_speed.name = "RAM";
-		item_speed.units = "MB";
-
-		item_speed.draw();
-		item_speed.drawWithInputValue(50);
-	}
+	document.getElementById("title").innerHTML = "RAM usage (MB)";
+	document.getElementById('actualize_button').onClick = "actualizeRAM();";
+	
+	mem_speed.draw();
+	mem_speed.drawWithInputValue(50);
 };
 
 
 
-function actualize(){
+
+function actualizeCPU(){
 	var use = document.getElementById("percent").value;
-	item_speed.drawWithInputValue(use);
+	cpu_speed.draw();
+	cpu_speed.drawWithInputValue(use);
 };
+
+function actualizeDISK(){
+	var use = document.getElementById("percent").value;
+	disk_speed.draw();
+	disk_speed.drawWithInputValue(use);
+
+};
+
+function actualizeRAM(){
+	var use = document.getElementById("percent").value;
+	mem_speed.draw();
+	mem_speed.drawWithInputValue(use);
+};
+
+/*
+
+*/
+
 
