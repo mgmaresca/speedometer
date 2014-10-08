@@ -77,9 +77,13 @@ var mem_speed = new Speedometer({
 function startCPU(){
 
 	document.getElementById('oculto').style.display = 'block';
+	document.getElementById('actualize_CPU').style.display = 'inline';
+
+	document.getElementById('actualize_DISK').style.display = 'none';
+	document.getElementById('actualize_RAM').style.display = 'none';
 		
 	document.getElementById("title").innerHTML = "CPU usage (%)";
-	document.getElementById('actualize_button').onClick = "actualizeCPU();";
+	
 
 	cpu_speed.draw();
 	cpu_speed.drawWithInputValue(50);
@@ -89,9 +93,12 @@ function startCPU(){
 function startDISK(){
 
 	document.getElementById('oculto').style.display = 'block';
+	document.getElementById('actualize_DISK').style.display = 'inline';
+
+	document.getElementById('actualize_CPU').style.display = 'none';
+	document.getElementById('actualize_RAM').style.display = 'none';
 
 	document.getElementById("title").innerHTML = "Disk usage (GB)";
-	document.getElementById('actualize_button').onClick = "actualizeDISK();";
 
 	disk_speed.draw();
 	disk_speed.drawWithInputValue(50);
@@ -101,9 +108,13 @@ function startDISK(){
 function startRAM(){
 
 	document.getElementById('oculto').style.display = 'block';
+	document.getElementById('actualize_RAM').style.display = 'inline';
+
+	document.getElementById('actualize_CPU').style.display = 'none';
+	document.getElementById('actualize_DISK').style.display = 'none';
 
 	document.getElementById("title").innerHTML = "RAM usage (MB)";
-	document.getElementById('actualize_button').onClick = "actualizeRAM();";
+
 	
 	mem_speed.draw();
 	mem_speed.drawWithInputValue(50);
@@ -114,20 +125,20 @@ function startRAM(){
 
 function actualizeCPU(){
 	var use = document.getElementById("percent").value;
-	cpu_speed.draw();
+	//cpu_speed.draw();
 	cpu_speed.drawWithInputValue(use);
 };
 
 function actualizeDISK(){
 	var use = document.getElementById("percent").value;
-	disk_speed.draw();
+	//disk_speed.draw();
 	disk_speed.drawWithInputValue(use);
 
 };
 
 function actualizeRAM(){
 	var use = document.getElementById("percent").value;
-	mem_speed.draw();
+	//mem_speed.draw();
 	mem_speed.drawWithInputValue(use);
 };
 
